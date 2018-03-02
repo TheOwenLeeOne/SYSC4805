@@ -7,6 +7,8 @@ int motorSpeed = 175;
 int motorToTurn = rightMotor1;
 int secondaryMotor = leftMotor1;
 
+int completedLED = 12;
+
 bool turning = false;
 
 
@@ -23,6 +25,7 @@ void setup() {
   pinMode(ir_R, INPUT);
   pinMode(ir_L, INPUT);
 
+  pinMode(completedLED, OUTPUT);
 
   pinMode(LED_BUILTIN, OUTPUT);
 
@@ -43,7 +46,7 @@ void loop() {
   hit_L = digitalRead(ir_L);
 
   while(directionCount > 9) {
-        
+        digitalWrite(completedLED, HIGH);
   }
 
   if (!turning){ // Following path
